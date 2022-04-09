@@ -7,7 +7,10 @@ import animall from "./theme";
 
 function App() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    setLoading(true);
     async function renderElements() {
       axios
         .get("https://animall-backend-assesment.herokuapp.com/data")
@@ -15,10 +18,13 @@ function App() {
           console.log(typeof res.data.data[0].animalType);
           const newData = res.data.data;
           setData(newData);
+          setLoading(false);
         });
     }
     renderElements();
   }, []);
+
+  if (loading) return <h3> Initializing App....</h3>;
 
   return (
     <ThemeProvider theme={animall}>
@@ -27,7 +33,6 @@ function App() {
           <Suspense fallback={<h3>Loading...</h3>}>
             <Routes>
               <Route exact path="/" element={<ListingPage data={data} />} />
-              <Route path="/details" element={<h3>Details page</h3>} />
             </Routes>
           </Suspense>
         </Router>
