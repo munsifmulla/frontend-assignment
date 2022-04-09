@@ -3,6 +3,7 @@ import { makeStyles } from "@mui/styles";
 export default makeStyles(theme => ({
   card: {
     boxShadow: theme.shadowOuter,
+    background: theme.palette.white,
   },
   cardContainer: {
     padding: theme.spacing(3),
@@ -35,11 +36,12 @@ export default makeStyles(theme => ({
   },
   price: {
     display: "inline-block",
-    border: "1px solid red",
-    fontWeight: 600,
-    color: "red",
+    border: "1px solid" + theme.palette.green,
+    fontWeight: 800,
+    color: theme.palette.green,
     padding: `${theme.spacing(2)} ${theme.spacing(3)}`,
     borderRadius: 4,
+    fontSize: theme.spacing(4),
   },
   sliderImage: {
     width: "100%",
@@ -74,6 +76,8 @@ export default makeStyles(theme => ({
     "& span": {
       padding: theme.spacing(1),
       backgroundColor: theme.palette.white,
+      fontWeight: 800,
+      fontSize: theme.spacing(3),
     },
   },
   locationDetails: {

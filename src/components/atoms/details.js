@@ -22,7 +22,7 @@ const Details = ({
           </ul>
         </Grid>
         <Grid item xs={6} style={{ textAlign: "right" }}>
-          <div className={classes.price}>Rs {numberFormatter(price)}</div>
+          <div className={classes.price}>₹ {numberFormatter(price)}</div>
         </Grid>
       </Grid>
     </div>

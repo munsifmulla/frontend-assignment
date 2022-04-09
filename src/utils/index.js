@@ -1,9 +1,8 @@
 export function checkCoordinatesDistance(lat1, lon1, lat2, lon2) {
   //   console.log("DISTANCE CHECK: ", lat1, lon1, lat2, lon2);
   let dLat, dLon, a, c, d;
+  const R = 6371; // Radius of the earth in km
   if (lat2 && lon2) {
-    const R = 6371; // Radius of the earth in km
-
     dLat = (lat2 - lat1) * (Math.PI / 180);
     dLon = (lon2 - lon1) * (Math.PI / 180);
     a =
@@ -15,7 +14,7 @@ export function checkCoordinatesDistance(lat1, lon1, lat2, lon2) {
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     d = R * c; // Distance in km
   }
-  return d;
+  return d - R;
 }
 
 export function numberFormatter(number) {
