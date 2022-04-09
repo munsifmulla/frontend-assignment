@@ -1,8 +1,11 @@
 import { makeStyles } from "@mui/styles";
 
 export default makeStyles(theme => ({
+  logo: {
+    height: theme.spacing(6),
+  },
   appHeader: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     background: theme.color,
     boxShadow: theme.shadowLower,
     textAlign: "center",

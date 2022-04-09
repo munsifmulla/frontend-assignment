@@ -24,7 +24,7 @@ function App() {
     renderElements();
   }, []);
 
-  if (loading) return <h3> Initializing App....</h3>;
+  if (loading) return <h3 className="loader"> Initializing App....</h3>;
 
   return (
     <ThemeProvider theme={animall}>

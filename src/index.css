@@ -17,6 +17,12 @@ ul {
   padding: 0;
   list-style-type: none;
 }
+
+.loader {
+  text-align: center;
+  margin: 20% 0;
+  color: #4e4c4c;
+}
 .slick-dots {
   bottom: 10px;
 }

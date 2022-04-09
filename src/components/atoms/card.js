@@ -4,6 +4,7 @@ import Slider from "./slider";
 import Details from "./details";
 import Location from "./location";
 import useStyles from "./style";
+import { dialNumber } from "utils";
 
 const CardComponet = ({ details }) => {
   const classes = useStyles();
@@ -36,7 +37,11 @@ const CardComponet = ({ details }) => {
           />
           <Details animalDetails={generateDetails(details)} classes={classes} />
           <Box>
-            <Button fullWidth variant="contained">
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={_ => dialNumber(details.contact)}
+            >
               Call
             </Button>
           </Box>

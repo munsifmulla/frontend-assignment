@@ -11,8 +11,7 @@ const AuthLayout = ({ children }) => {
           <img
             src="https://static-assets.animall.in/static/images/animall-logo-2021.png"
             alt="Animall"
-            width="147"
-            height="51"
+            className={classes.logo}
           />
         </header>
       </Grid>

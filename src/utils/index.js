@@ -23,3 +23,7 @@ export function numberFormatter(number) {
     number
   );
 }
+
+export function dialNumber(number) {
+  window.open("tel:" + number);
+}
