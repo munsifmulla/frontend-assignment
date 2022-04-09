@@ -27,3 +27,15 @@ export function numberFormatter(number) {
 export function dialNumber(number) {
   window.open("tel:" + number);
 }
+
+export function getExtension(url) {
+  return url.split(/[#?]/)[0].split(".").pop().trim();
+}
+export function imageExists(imageUrl) {
+  var http = new XMLHttpRequest();
+
+  http.open("HEAD", imageUrl, false);
+  http.send();
+
+  return http.status;
+}

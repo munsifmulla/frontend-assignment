@@ -52,6 +52,12 @@ export default makeStyles(theme => ({
       position: "absolute",
       objectFit: "cover",
     },
+    "& video": {
+      width: "100%",
+      height: "100%",
+      position: "absolute",
+      objectFit: "cover",
+    },
   },
   location: {
     display: "flex",
@@ -79,5 +85,14 @@ export default makeStyles(theme => ({
     maxWidth: theme.spacing(25),
     textAlign: "right",
     wordWrap: "break-word",
+  },
+  photoGrid: {
+    position: "relative",
+    width: "100%",
+    height: "300px",
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "4px",
+    justifyContent: "center",
   },
 }));

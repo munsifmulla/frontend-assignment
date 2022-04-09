@@ -1,12 +1,13 @@
 import React from "react";
 import { Button, Grid, Box } from "@mui/material";
 import Slider from "./slider";
+import PhotoGrid from "./photoGrid";
 import Details from "./details";
 import Location from "./location";
 import useStyles from "./style";
 import { dialNumber } from "utils";
 
-const CardComponet = ({ details }) => {
+const CardComponet = ({ details, type = "grid" }) => {
   const classes = useStyles();
 
   const parsedResources = details.resources.map(item => JSON.parse(item));
@@ -29,7 +30,12 @@ const CardComponet = ({ details }) => {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <div className={classes.card}>
-        <Slider images={parsedResources} classes={classes} />
+        {type === "slider" ? (
+          <Slider images={parsedResources} classes={classes} />
+        ) : (
+          <PhotoGrid images={parsedResources} classes={classes} />
+        )}
+
         <Box className={classes.cardContainer}>
           <Location
             classes={classes}

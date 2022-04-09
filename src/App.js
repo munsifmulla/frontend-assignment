@@ -2,6 +2,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import ListingPage from "./components/pages/listingPage";
+import ListingPageSlider from "./components/pages/listingPageSlider";
 import axios from "axios";
 import animall from "./theme";
 
@@ -33,6 +34,11 @@ function App() {
           <Suspense fallback={<h3>Loading...</h3>}>
             <Routes>
               <Route exact path="/" element={<ListingPage data={data} />} />
+              <Route
+                exact
+                path="/slider"
+                element={<ListingPageSlider data={data} />}
+              />
             </Routes>
           </Suspense>
         </Router>
